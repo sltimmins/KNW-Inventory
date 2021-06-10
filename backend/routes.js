@@ -6,6 +6,7 @@ module.exports = function routes(app, logger) {
     res.status(200).send('Go to 0.0.0.0:3000.');
   });
 
+  // Add an item to the inventory
   app.post('/add', (req, res) => {
     const name = req.body.name;
     const quantity = req.body.quantity || undefined;
@@ -27,6 +28,7 @@ module.exports = function routes(app, logger) {
     })
   })
 
+  // Get all items in inventory
   app.get('/inventory', (req, res) => {
     pool.query("SELECT name, quantity, locker FROM inventory", (err, results) => {
       if(err) {
@@ -36,6 +38,42 @@ module.exports = function routes(app, logger) {
       } else {
         res.status(200)
            .send({ success: true, data: results});
+      }
+    })
+  })
+
+  app.put('/ordered/', (req, res) => {
+
+    const arrivalDate = req.body.arrivalDate;
+
+    const sql = "UPDATE inventory SET onOrder = true, orderArrivalDate = ? WHERE id = ?";
+
+    pool.query(sql, [arrivalDate, req.param('id')], (err, result) => {
+      if(err) {
+        logger.error("Error updating order information: \n", err);
+        res.status(400)
+           .send({ success: false, msg: "Error updating order information" });
+      } else {
+        res.status(200)
+           .send({ success: true, msg: "Updated order information for item" })
+      }
+    })
+  })
+
+  app.put('/arrived/', (req, res) => {
+
+    const arrivalDate = req.body.arrivalDate;
+
+    const sql = "UPDATE inventory SET onOrder = false, orderArrivalDate = NULL WHERE id = ?";
+
+    pool.query(sql, [req.param('id')], (err, result) => {
+      if(err) {
+        logger.error("Error updating order information: \n", err);
+        res.status(400)
+           .send({ success: false, msg: "Error updating order information" });
+      } else {
+        res.status(200)
+           .send({ success: true, msg: "Updated order information for item" })
       }
     })
   })
