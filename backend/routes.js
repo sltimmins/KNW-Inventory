@@ -77,4 +77,56 @@ module.exports = function routes(app, logger) {
       }
     })
   })
+
+  app.get('/item/', (req, res) => {
+
+    const sql = "SELECT * FROM inventory WHERE id = ?";
+
+    pool.query(sql, [req.param('id')], (err, result) => {
+      if(err) {
+        logger.error("Error retrieving item information: \n", err);
+        res.status(400)
+           .send({ success: false, msg: "Error retrieving item information" });
+      } else {
+        res.status(200)
+           .send({ success: true, data: result })
+      }
+    })
+  })
+
+  app.put('/increaseQuantity/', (req, res) => {
+
+    const change = req.body.change;
+
+    const sql = "UPDATE inventory SET quantity = quantity + ? WHERE id = ?";
+
+    pool.query(sql, [change, req.param('id')], (err, result) => {
+      if(err) {
+        logger.error("Error updating quantity: \n", err);
+        res.status(400)
+           .send({ success: false, msg: "Error updating quantity" });
+      } else {
+        res.status(200)
+           .send({ success: true, msg: "Updated quantity for item" })
+      }
+    })
+  })
+
+  app.put('/decreaseQuantity/', (req, res) => {
+
+    const change = req.body.change;
+
+    const sql = "UPDATE inventory SET quantity = quantity - ? WHERE id = ?";
+
+    pool.query(sql, [change, req.param('id')], (err, result) => {
+      if(err) {
+        logger.error("Error updating quantity: \n", err);
+        res.status(400)
+           .send({ success: false, msg: "Error updating quantity" });
+      } else {
+        res.status(200)
+           .send({ success: true, msg: "Updated quantity for item" })
+      }
+    })
+  })
 }
