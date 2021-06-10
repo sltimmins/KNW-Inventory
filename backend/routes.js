@@ -129,4 +129,22 @@ module.exports = function routes(app, logger) {
       }
     })
   })
+
+  app.put('/changeLocker/', (req, res) => {
+
+    const newLocker = req.body.newLocker;
+
+    const sql = "UPDATE inventory SET locker = ? WHERE id = ?";
+
+    pool.query(sql, [newLocker, req.param('id')], (err, result) => {
+      if(err) {
+        logger.error("Error updating locker: \n", err);
+        res.status(400)
+           .send({ success: false, msg: "Error updating locker" });
+      } else {
+        res.status(200)
+           .send({ success: true, msg: "Updated locker for item" })
+      }
+    })
+  })
 }
