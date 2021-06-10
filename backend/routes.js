@@ -11,10 +11,11 @@ module.exports = function routes(app, logger) {
     const name = req.body.name;
     const quantity = req.body.quantity || undefined;
     const locker = req.body.locker || undefined;
+    const link = req.body.link || undefined;
 
-    const sql = "INSERT INTO inventory (name, quantity, locker) VALUES (?, ?, ?)";
+    const sql = "INSERT INTO inventory (name, quantity, locker, link) VALUES (?, ?, ?, ?)";
 
-    pool.query(sql, [name, quantity, locker], (err, results) => {
+    pool.query(sql, [name, quantity, locker, link], (err, results) => {
       if (err) {
         logger.error("Error adding item to inventory: \n", err);
         res
@@ -144,6 +145,24 @@ module.exports = function routes(app, logger) {
       } else {
         res.status(200)
            .send({ success: true, msg: "Updated locker for item" })
+      }
+    })
+  })
+
+  app.put('/changeLink/', (req, res) => {
+
+    const newLink = req.body.newLink;
+
+    const sql = "UPDATE inventory SET link = ? WHERE id = ?";
+
+    pool.query(sql, [newLink, req.param('id')], (err, result) => {
+      if(err) {
+        logger.error("Error updating link: \n", err);
+        res.status(400)
+           .send({ success: false, msg: "Error updating link" });
+      } else {
+        res.status(200)
+           .send({ success: true, msg: "Updated link for item" })
       }
     })
   })
