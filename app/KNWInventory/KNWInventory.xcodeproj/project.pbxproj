@@ -7,27 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A0EA1516267406E1009A8295 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EA1515267406E1009A8295 /* AppDelegate.swift */; };
-		A0EA1518267406E1009A8295 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EA1517267406E1009A8295 /* SceneDelegate.swift */; };
-		A0EA151A267406E1009A8295 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EA1519267406E1009A8295 /* ContentView.swift */; };
-		A0EA151C267406E4009A8295 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0EA151B267406E4009A8295 /* Assets.xcassets */; };
-		A0EA151F267406E4009A8295 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0EA151E267406E4009A8295 /* Preview Assets.xcassets */; };
-		A0EA1522267406E4009A8295 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0EA1520267406E4009A8295 /* LaunchScreen.storyboard */; };
+		A08ED2EF26740E570003F16F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08ED2EE26740E570003F16F /* AppDelegate.swift */; };
+		A08ED2F126740E570003F16F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08ED2F026740E570003F16F /* SceneDelegate.swift */; };
+		A08ED2F326740E570003F16F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08ED2F226740E570003F16F /* ViewController.swift */; };
+		A08ED2F626740E570003F16F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08ED2F426740E570003F16F /* Main.storyboard */; };
+		A08ED2F826740E5C0003F16F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A08ED2F726740E5C0003F16F /* Assets.xcassets */; };
+		A08ED2FB26740E5C0003F16F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08ED2F926740E5C0003F16F /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A0EA1512267406E1009A8295 /* KNWInventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KNWInventory.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A0EA1515267406E1009A8295 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A0EA1517267406E1009A8295 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A0EA1519267406E1009A8295 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A0EA151B267406E4009A8295 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A0EA151E267406E4009A8295 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A0EA1521267406E4009A8295 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		A0EA1523267406E4009A8295 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A08ED2EB26740E570003F16F /* KNWInventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KNWInventory.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A08ED2EE26740E570003F16F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A08ED2F026740E570003F16F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A08ED2F226740E570003F16F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A08ED2F526740E570003F16F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A08ED2F726740E5C0003F16F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A08ED2FA26740E5C0003F16F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A08ED2FC26740E5C0003F16F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A0EA150F267406E1009A8295 /* Frameworks */ = {
+		A08ED2E826740E570003F16F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -37,54 +37,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A0EA1509267406E1009A8295 = {
+		A08ED2E226740E570003F16F = {
 			isa = PBXGroup;
 			children = (
-				A0EA1514267406E1009A8295 /* KNWInventory */,
-				A0EA1513267406E1009A8295 /* Products */,
+				A08ED2ED26740E570003F16F /* KNWInventory */,
+				A08ED2EC26740E570003F16F /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		A0EA1513267406E1009A8295 /* Products */ = {
+		A08ED2EC26740E570003F16F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A0EA1512267406E1009A8295 /* KNWInventory.app */,
+				A08ED2EB26740E570003F16F /* KNWInventory.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		A0EA1514267406E1009A8295 /* KNWInventory */ = {
+		A08ED2ED26740E570003F16F /* KNWInventory */ = {
 			isa = PBXGroup;
 			children = (
-				A0EA1515267406E1009A8295 /* AppDelegate.swift */,
-				A0EA1517267406E1009A8295 /* SceneDelegate.swift */,
-				A0EA1519267406E1009A8295 /* ContentView.swift */,
-				A0EA151B267406E4009A8295 /* Assets.xcassets */,
-				A0EA1520267406E4009A8295 /* LaunchScreen.storyboard */,
-				A0EA1523267406E4009A8295 /* Info.plist */,
-				A0EA151D267406E4009A8295 /* Preview Content */,
+				A08ED2EE26740E570003F16F /* AppDelegate.swift */,
+				A08ED2F026740E570003F16F /* SceneDelegate.swift */,
+				A08ED2F226740E570003F16F /* ViewController.swift */,
+				A08ED2F426740E570003F16F /* Main.storyboard */,
+				A08ED2F726740E5C0003F16F /* Assets.xcassets */,
+				A08ED2F926740E5C0003F16F /* LaunchScreen.storyboard */,
+				A08ED2FC26740E5C0003F16F /* Info.plist */,
 			);
 			path = KNWInventory;
-			sourceTree = "<group>";
-		};
-		A0EA151D267406E4009A8295 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				A0EA151E267406E4009A8295 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A0EA1511267406E1009A8295 /* KNWInventory */ = {
+		A08ED2EA26740E570003F16F /* KNWInventory */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A0EA1526267406E4009A8295 /* Build configuration list for PBXNativeTarget "KNWInventory" */;
+			buildConfigurationList = A08ED2FF26740E5C0003F16F /* Build configuration list for PBXNativeTarget "KNWInventory" */;
 			buildPhases = (
-				A0EA150E267406E1009A8295 /* Sources */,
-				A0EA150F267406E1009A8295 /* Frameworks */,
-				A0EA1510267406E1009A8295 /* Resources */,
+				A08ED2E726740E570003F16F /* Sources */,
+				A08ED2E826740E570003F16F /* Frameworks */,
+				A08ED2E926740E570003F16F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -92,24 +84,24 @@
 			);
 			name = KNWInventory;
 			productName = KNWInventory;
-			productReference = A0EA1512267406E1009A8295 /* KNWInventory.app */;
+			productReference = A08ED2EB26740E570003F16F /* KNWInventory.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A0EA150A267406E1009A8295 /* Project object */ = {
+		A08ED2E326740E570003F16F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
-					A0EA1511267406E1009A8295 = {
+					A08ED2EA26740E570003F16F = {
 						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
-			buildConfigurationList = A0EA150D267406E1009A8295 /* Build configuration list for PBXProject "KNWInventory" */;
+			buildConfigurationList = A08ED2E626740E570003F16F /* Build configuration list for PBXProject "KNWInventory" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -117,47 +109,55 @@
 				en,
 				Base,
 			);
-			mainGroup = A0EA1509267406E1009A8295;
-			productRefGroup = A0EA1513267406E1009A8295 /* Products */;
+			mainGroup = A08ED2E226740E570003F16F;
+			productRefGroup = A08ED2EC26740E570003F16F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A0EA1511267406E1009A8295 /* KNWInventory */,
+				A08ED2EA26740E570003F16F /* KNWInventory */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A0EA1510267406E1009A8295 /* Resources */ = {
+		A08ED2E926740E570003F16F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0EA1522267406E4009A8295 /* LaunchScreen.storyboard in Resources */,
-				A0EA151F267406E4009A8295 /* Preview Assets.xcassets in Resources */,
-				A0EA151C267406E4009A8295 /* Assets.xcassets in Resources */,
+				A08ED2FB26740E5C0003F16F /* LaunchScreen.storyboard in Resources */,
+				A08ED2F826740E5C0003F16F /* Assets.xcassets in Resources */,
+				A08ED2F626740E570003F16F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A0EA150E267406E1009A8295 /* Sources */ = {
+		A08ED2E726740E570003F16F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0EA1516267406E1009A8295 /* AppDelegate.swift in Sources */,
-				A0EA1518267406E1009A8295 /* SceneDelegate.swift in Sources */,
-				A0EA151A267406E1009A8295 /* ContentView.swift in Sources */,
+				A08ED2F326740E570003F16F /* ViewController.swift in Sources */,
+				A08ED2EF26740E570003F16F /* AppDelegate.swift in Sources */,
+				A08ED2F126740E570003F16F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A0EA1520267406E4009A8295 /* LaunchScreen.storyboard */ = {
+		A08ED2F426740E570003F16F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A0EA1521267406E4009A8295 /* Base */,
+				A08ED2F526740E570003F16F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A08ED2F926740E5C0003F16F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A08ED2FA26740E5C0003F16F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -165,7 +165,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		A0EA1524267406E4009A8295 /* Debug */ = {
+		A08ED2FD26740E5C0003F16F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -226,7 +226,7 @@
 			};
 			name = Debug;
 		};
-		A0EA1525267406E4009A8295 /* Release */ = {
+		A08ED2FE26740E5C0003F16F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -281,15 +281,13 @@
 			};
 			name = Release;
 		};
-		A0EA1527267406E4009A8295 /* Debug */ = {
+		A08ED30026740E5C0003F16F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"KNWInventory/Preview Content\"";
 				DEVELOPMENT_TEAM = KVV4R3P6V7;
-				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KNWInventory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -302,15 +300,13 @@
 			};
 			name = Debug;
 		};
-		A0EA1528267406E4009A8295 /* Release */ = {
+		A08ED30126740E5C0003F16F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"KNWInventory/Preview Content\"";
 				DEVELOPMENT_TEAM = KVV4R3P6V7;
-				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = KNWInventory/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -326,25 +322,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A0EA150D267406E1009A8295 /* Build configuration list for PBXProject "KNWInventory" */ = {
+		A08ED2E626740E570003F16F /* Build configuration list for PBXProject "KNWInventory" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A0EA1524267406E4009A8295 /* Debug */,
-				A0EA1525267406E4009A8295 /* Release */,
+				A08ED2FD26740E5C0003F16F /* Debug */,
+				A08ED2FE26740E5C0003F16F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A0EA1526267406E4009A8295 /* Build configuration list for PBXNativeTarget "KNWInventory" */ = {
+		A08ED2FF26740E5C0003F16F /* Build configuration list for PBXNativeTarget "KNWInventory" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A0EA1527267406E4009A8295 /* Debug */,
-				A0EA1528267406E4009A8295 /* Release */,
+				A08ED30026740E5C0003F16F /* Debug */,
+				A08ED30126740E5C0003F16F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A0EA150A267406E1009A8295 /* Project object */;
+	rootObject = A08ED2E326740E570003F16F /* Project object */;
 }
