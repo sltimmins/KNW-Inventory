@@ -13,6 +13,8 @@
 		A08ED2F626740E570003F16F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08ED2F426740E570003F16F /* Main.storyboard */; };
 		A08ED2F826740E5C0003F16F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A08ED2F726740E5C0003F16F /* Assets.xcassets */; };
 		A08ED2FB26740E5C0003F16F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A08ED2F926740E5C0003F16F /* LaunchScreen.storyboard */; };
+		A0EF2BE226753E3200FE125A /* PasswordPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF2BE126753E3200FE125A /* PasswordPageViewController.swift */; };
+		A0EF2BE926753E6A00FE125A /* TestHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF2BE826753E6A00FE125A /* TestHomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		A08ED2F726740E5C0003F16F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A08ED2FA26740E5C0003F16F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A08ED2FC26740E5C0003F16F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A0EF2BE126753E3200FE125A /* PasswordPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordPageViewController.swift; sourceTree = "<group>"; };
+		A0EF2BE826753E6A00FE125A /* TestHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				A08ED2F726740E5C0003F16F /* Assets.xcassets */,
 				A08ED2F926740E5C0003F16F /* LaunchScreen.storyboard */,
 				A08ED2FC26740E5C0003F16F /* Info.plist */,
+				A0EF2BE126753E3200FE125A /* PasswordPageViewController.swift */,
+				A0EF2BE826753E6A00FE125A /* TestHomeViewController.swift */,
 			);
 			path = KNWInventory;
 			sourceTree = "<group>";
@@ -137,9 +143,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0EF2BE226753E3200FE125A /* PasswordPageViewController.swift in Sources */,
 				A08ED2F326740E570003F16F /* ViewController.swift in Sources */,
 				A08ED2EF26740E570003F16F /* AppDelegate.swift in Sources */,
 				A08ED2F126740E570003F16F /* SceneDelegate.swift in Sources */,
+				A0EF2BE926753E6A00FE125A /* TestHomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
