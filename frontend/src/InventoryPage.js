@@ -11,10 +11,14 @@ export function InventoryPage({ item }) {
     
     let [show, setShow] = useState(false);
     let [listing, setListing] = useState(null);
-    let items = [];
+    let [items, setItems] = useState({ 'inventory': []});
     
     const getListings = () => {
-        axios.get(baseURL + "/getInventory");
+        axios.all([
+            axios.get(baseURL + "/getInventory")
+        ]).then(axios.spread((inventory) => {
+            setItems({ 'inventory': inventory.data.data})
+        }))
     }
 
     useEffect(() => {

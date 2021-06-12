@@ -77,7 +77,8 @@ export function InventoryList({ setListing, listings }) {
 
   let items = []
 
-  listings.forEach(listing => {
+  listings.inventory.forEach(listing => {
+    console.log(JSON.stringify(listing));
     items.push(
       <InventoryItem key={listing.id} listing={listing} redraw={() => redraw()} />
     )
