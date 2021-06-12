@@ -3,12 +3,6 @@ import React, { useState } from "react";
 export function Login(props) {
   const [values, setValues] = useState({ passcode: "" });
 
-  const handleKeyDown = (event) => {
-    if(event.key === 'Enter') {
-      props.doLogin(values.passcode)
-    }
-  }
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });

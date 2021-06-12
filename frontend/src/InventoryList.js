@@ -1,14 +1,33 @@
-import React, { useState, useRef, useLayoutEffect } from "react";
-
+import React, { useState, useRef, useEffect, useLayoutEffect, } from "react";
 import './InventoryList.css'
-import listings from "./dummyData.js";
+import { capitalize } from './utils'
 import { CreateItemModal } from "./CreateItemModal";
 
 
-function InventoryItem(props) {
-  let price = props.listing.base_price;
-  if (!price) {
-    price = props.listing.current_bid
+export function InventoryItem(props) {
+  let [compare, setCompare] = useState(0)
+
+  //We dont want to call rerender if this is our first time
+  //Only cause table to rerender when something has actually changed
+  //Done beacuse datatables makes some things harder than they should 
+  const firstUpdate = useRef(true);
+  useLayoutEffect(() => {
+    if (firstUpdate.current) {
+      firstUpdate.current = false;
+      return;
+    }
+    props.redraw()
+  }, [compare])
+
+  const handleRowClick = (e) => {
+    //Datatables injects a before + if we are in responsive mode
+    //If it is displayed and was clicked, return so it can be expanded
+    const before = window.getComputedStyle(e.target, "before");
+    const val = before.getPropertyValue("content")
+    if (val != "none") {
+      return
+    }
+    props.setListing(props.listing)
   }
 
   return (
@@ -16,35 +35,66 @@ function InventoryItem(props) {
       <th scope="row">{props.listing.name}</th>
       <td>{props.listing.quantity}</td>
       <td>{props.listing.locker}</td>
+      <td></td>
     </tr>
   );
 }
 
 
-export function InventoryList(props) {
+export function InventoryList({ setListing, listings }) {
+  let filter = false
 
-  let items = [];
+  let init = useRef(false);
+  const redraw = () => {
+    //If we have not created instance
+    //Do that now
+    if (!init.current) {
+      setup()
+      init.current = true;
+    }
+
+    //Otherwise just update it with row data
+    const dTable = window.$(table.current).DataTable()
+    if (dTable) {
+      dTable.rows().invalidate().draw()
+    }
+  }
+
+  //Make the datatables instance
+  const setup = () => {
+    window.$(table.current).DataTable({
+      responsive: true,
+      dom: 'Bfrtip',
+      columnDefs: [
+        {
+          "targets": [3],
+          "visible": false,
+          "searchable": true,
+        }
+      ]
+    })
+  }
+
+  let items = []
+
   listings.forEach(listing => {
-    items.push((
-      <InventoryItem listing={listing} />
-    ))
+    items.push(
+      <InventoryItem key={listing.id} listing={listing} redraw={() => redraw()} />
+    )
+  })
+
+  useLayoutEffect(() => {
+    //Do we have listings? 
+    //Need after render for datatables
+    if (items.length > 0) {
+      redraw()
+    }
   })
 
   const table = useRef();
 
-  useLayoutEffect(() => {
-    window.$(table.current).DataTable()
-  }, [])
-
   return (
     <div className="container mt-5">
-      <div className="d-flex justify-content-between">
-        <h1>ENGR 1357 Inventory</h1>
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#listingModal">
-          Add item
-        </button>
-      </div>
-      <CreateItemModal />
       <div className="p-2 mt-5">
         <table className="table table-striped" ref={table}>
           <thead className="thead-dark">

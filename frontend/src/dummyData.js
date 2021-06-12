@@ -7,13 +7,13 @@ let listings = [new Item(
     "A1",
 ),
 new Item(
-    5, 
+    6, 
     "Arduino",
     5,
     "A1",
 ),
 new Item(
-    6, 
+    7, 
     "Servo Mount",
     15,
     "A1",

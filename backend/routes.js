@@ -30,7 +30,7 @@ module.exports = function routes(app, logger) {
   })
 
   // Get all items in inventory
-  app.get('/inventory', (req, res) => {
+  app.get('/getInventory', (req, res) => {
     pool.query("SELECT name, quantity, locker FROM inventory", (err, results) => {
       if(err) {
         logger.error("Error retrieving inventory information: \n", err);

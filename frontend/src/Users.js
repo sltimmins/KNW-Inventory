@@ -1,31 +1,18 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { Login } from "./Login.js";
-import { AppContext } from "./AppContext.js";
 
 import {
   useHistory,
-  useLocation
 } from 'react-router-dom'
-
-import axios from "axios";
 
 // React functional component
 export function Users() {
-  const [registerMode, setRegister] = useState(false);
   const [bannerMessage, setBanner] = useState("");
 
-  const { baseURL, setUser, setJWT } = useContext(AppContext);
-
-  const toggleRegisterMode = () => {
-    setBanner("");
-    setRegister(!registerMode);
-  };
-
   let history = useHistory();
-  let location = useLocation();
   const redirectToHome = () => {
-    let { from } = { from: { pathname: "/listings" } };
+    let { from } = { from: { pathname: "/inventory" } };
     history.replace(from);
   }
 
@@ -33,7 +20,7 @@ export function Users() {
     //Clear banner so they know its different
     setBanner("");
 
-    if(passcode == "68782647")
+    if(passcode === "68782647")
     {
       redirectToHome();
     } else {
@@ -54,7 +41,6 @@ export function Users() {
     <Login
       banner={banner}
       doLogin={doLogin}
-      toggleRegisterMode={toggleRegisterMode}
     />
   );
 

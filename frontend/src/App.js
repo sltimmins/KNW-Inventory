@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./App.css";
 import { Users } from "./Users.js";
 
-import { InventoryList } from "./InventoryList";
+import { InventoryPage } from "./InventoryPage";
 import { ItemListingPage } from './ItemListingPage'
 
 import axios from "axios";
@@ -40,8 +40,8 @@ export function App() {
             <Route path="/login">
               <Users />
             </Route>
-            <Route path="/listings">
-              <InventoryList />
+            <Route path="/inventory">
+              <InventoryPage />
             </Route>
             <Route path="/listing">
               <ItemListingPage />
