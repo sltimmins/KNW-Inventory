@@ -10,13 +10,21 @@ import UIKit
 class TestHomeViewController: UIViewController {
 
     @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var continueButton: UIButton!
     
     var password: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.testLabel.text = "You have entered \(self.password ?? "NO PASS") as your password."
+        if(self.password == "68782647"){
+            self.testLabel.text = "Password Accepted!"
+            continueButton.isHidden = false
+        } else {
+            self.testLabel.text = "Password Incorrect"
+            continueButton.isHidden = true
+        }
+        
 
         // Do any additional setup after loading the view.
     }
