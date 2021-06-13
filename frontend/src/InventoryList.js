@@ -31,7 +31,7 @@ export function InventoryItem(props) {
   }
 
   return (
-    <tr className="itemRow">
+    <tr className="itemRow" onClick={(e) => handleRowClick(e)}>
       <th scope="row">{props.listing.name}</th>
       <td>{props.listing.quantity}</td>
       <td>{props.listing.locker}</td>
@@ -78,7 +78,6 @@ export function InventoryList({ setListing, listings }) {
   let items = []
 
   listings.inventory.forEach(listing => {
-    console.log(JSON.stringify(listing));
     items.push(
       <InventoryItem key={listing.id} listing={listing} redraw={() => redraw()} />
     )

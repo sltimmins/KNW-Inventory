@@ -35,11 +35,9 @@ export function InventoryPage({ item }) {
         <div className="container mt-5">
             <div className="d-flex justify-content-between">
                 <h1>ENGR 1357 Inventory</h1>
-                <button type="button" className="btn btn-primary" onClick={() => setShow(true)}>
-                    Add Item
-                </button>
+                <button type="button" className="btn btn-primary" onClick={() => setShow(true)}>Add Item</button>
             </div>
-            {/* < CreateItemModal show={show} setShow={setShow} refresh={getListings} /> */}
+            < CreateItemModal show={show} setShow={setShow} refresh={getListings} />
             < InventoryList key={items.id} listings={items} setListing={setListing} refresh={getListings} />
         </div>
     )

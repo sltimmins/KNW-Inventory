@@ -1,6 +1,7 @@
-import React, { useState, useContext } from "react"
+import React, { useState, useContext, useRef, useEffect } from "react"
 import { validateItem } from "./utils";
 import { AppContext } from "./AppContext.js";
+import { Modal } from 'bootstrap';
 import axios from "axios";
 
 export function ItemForm() {
@@ -27,7 +28,16 @@ export function CreateItemModal({ show, setShow, refresh }) {
 
     let [values, setValues] = useState(defaultValues);
 
+    const handleInputChange = (e) => {
+        let { name, value, checked } = e.target;
+        if(e.target.type === "checkbox") {
+            value = checked;
+        }
+        setValues({ ...values, [name]: value });
+    }
+
     const submit = () => {
+        console.log(JSON.stringify(values));
         const route = "/add";
         let error = validateItem(values);
 
@@ -47,53 +57,81 @@ export function CreateItemModal({ show, setShow, refresh }) {
         }).catch((r) => {
             setBannerMessage(r.response.data.msg)
         })
+    }
 
-        return (
-            <div className="modal fade" id="listingModal" tabindex="-1" aria-labelledby="listingModalLabel" aria-hidden="true">
-                <div className="modal-dialog">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title" id="listingModalLabel">Add item</h5>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div className="modal-body">
-                            <form>
-                                <div className="row g-3 mb-3">
-                                    <div className="col-3">
-                                        <label for="item" className="col-form-label">Item name</label>
-                                    </div>
-                                    <div className="col-9">
-                                        <input type="password" id="item" className="form-control" />
-                                    </div>
-                                    <div className="col-3">
-                                        <label for="quantity" className="col-form-label">Quantity</label>
-                                    </div>
-                                    <div className="col-9">
-                                        <input type="password" id="quantity" className="form-control" />
-                                    </div>
-                                    <div className="col-3">
-                                        <label for="locker" className="col-form-label">Locker</label>
-                                    </div>
-                                    <div className="col-9">
-                                        <input type="password" id="locker" className="form-control" />
-                                    </div>
-                                    <div className="col-3">
-                                        <label for="link" className="col-form-label">Link</label>
-                                    </div>
-                                    <div className="col-9">
-                                        <input type="password" id="link" className="form-control" />
-                                    </div>
-                                </div>
-    
-                            </form>
-                        </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary">Create</button>
-                        </div>
-                    </div>
-                </div>
+    const [modal, setModal] = useState(null);
+    const modalRef = useRef();
+
+    useEffect(() => {
+        setModal(new Modal(modalRef.current, { backdrop: 'static'}));
+    }, [show]);
+
+    useEffect(() => {
+        if(modal) {
+            modal.toggle();
+        }
+    }, [show])
+
+    let banner = <></>;
+    if(bannerMessage) {
+        banner = (
+            <div className="alert alert-primary" role="alert">
+                {bannerMessage}
             </div>
         )
     }
+
+    return (
+        <div ref={modalRef} className="modal fade modal-fullscreen-md-down" data-backdrop="static" id="itemModal" tabIndex="-1" aria-labelledby="itemModalLabel" aria-hidden="true">
+            <div className="modal-dialog">
+                <div className="modal-content">
+                    <div className="modal-header">
+                        <h5 className="modal-title" id="itemModalLabel">Add Item</h5>
+                        <button type="button" className="btn-close" data-bs-dismiss="modal" onClick={() => setShow(false)}></button>
+                    </div>
+                    <div className="modal-body">
+                        {banner}
+                        <form>
+                            <div className="row g-3 mb-3">
+                                <div className="col-3">
+                                    <label htmlFor="name" className="col-form-label">Item</label>
+                                </div>
+                                <div className="col-9">
+                                    <input className="form-control" name="name" id="name" onChange={handleInputChange} value={values.name}></input>
+                                </div>
+                            </div>
+                            <div className="row g-3 mb-3">
+                                <div className="col-3">
+                                    <label htmlFor="quantity" className="col-form-label">Quantity</label>
+                                </div>
+                                <div className="col-9">
+                                    <input className="form-control" name="quantity" id="quantity" onChange={handleInputChange} value={values.quantity}></input>
+                                </div>
+                            </div>
+                            <div className="row g-3 mb-3">
+                                <div className="col-3">
+                                    <label htmlFor="locker" className="col-form-label">Locker</label>
+                                </div>
+                                <div className="col-9">
+                                    <input className="form-control" name="locker" id="locker" onChange={handleInputChange} value={values.locker}></input>
+                                </div>
+                            </div>
+                            <div className="row g-3 mb-3">
+                                <div className="col-3">
+                                    <label htmlFor="link" className="col-form-label">Link</label>
+                                </div>
+                                <div className="col-9">
+                                    <input className="form-control" name="link" id="link" onChange={handleInputChange} value={values.link}></input>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => setShow(false)}>Close</button>
+                        <button type="button" className="btn btn-primary" onClick={() => submit()}>Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
 }
