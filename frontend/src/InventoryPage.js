@@ -31,7 +31,7 @@ export function InventoryPage({ item }) {
 
     if(listing) {
         return (
-            < ItemListingPage listing={listing} setListing={setListing} refresh={getListings} />
+            < ItemListingPage setListing={setListing} listing={listing} refresh={getListings} />
         )
     }
 

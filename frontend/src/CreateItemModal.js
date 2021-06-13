@@ -3,6 +3,7 @@ import { validateItem } from "./utils";
 import { AppContext } from "./AppContext.js";
 import { reload } from './InventoryPage'
 import { Modal } from 'bootstrap';
+import ImageUploader from 'react-images-upload'
 import axios from "axios";
 
 export function ItemForm() {
@@ -93,7 +94,7 @@ export function CreateItemModal({ show, setShow, refresh }) {
                 <div className="modal-content">
                     <div className="modal-header">
                         <h5 className="modal-title" id="itemModalLabel">Add Item</h5>
-                        <button type="button" className="btn-close" data-bs-dismiss="modal" onClick={() => setShow(false)}></button>
+                        <button type="button" className="btn-close" data-bs-dismiss="modal" onClick={() => handleClose()}></button>
                     </div>
                     <div className="modal-body">
                         {banner}
@@ -130,6 +131,12 @@ export function CreateItemModal({ show, setShow, refresh }) {
                                     <input className="form-control" name="link" id="link" onChange={handleInputChange} value={values.link}></input>
                                 </div>
                             </div>
+                            <ImageUploader
+                                withIcon={true}
+                                buttonText='Choose images'
+                                imgExtension={['.jpg', '.png']}
+                                maxFileSize={5242880}
+                            />
                         </form>
                     </div>
                     <div className="modal-footer">

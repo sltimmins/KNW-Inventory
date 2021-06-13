@@ -14,7 +14,6 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import { PrivateRoute } from './PrivateRoute.js'
 
 
 // React functional component
@@ -42,9 +41,6 @@ export function App() {
             </Route>
             <Route path="/inventory">
               <InventoryPage />
-            </Route>
-            <Route path="/item">
-              <ItemListingPage />
             </Route>
           </Switch>
         </Router>
