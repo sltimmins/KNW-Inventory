@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A01FB1E22675552D00554AA8 /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01FB1E12675552D00554AA8 /* HomePageViewController.swift */; };
 		A08ED2EF26740E570003F16F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08ED2EE26740E570003F16F /* AppDelegate.swift */; };
 		A08ED2F126740E570003F16F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08ED2F026740E570003F16F /* SceneDelegate.swift */; };
 		A08ED2F326740E570003F16F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08ED2F226740E570003F16F /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A01FB1E12675552D00554AA8 /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
 		A08ED2EB26740E570003F16F /* KNWInventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KNWInventory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A08ED2EE26740E570003F16F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A08ED2F026740E570003F16F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				A08ED2FC26740E5C0003F16F /* Info.plist */,
 				A0EF2BE126753E3200FE125A /* PasswordPageViewController.swift */,
 				A0EF2BE826753E6A00FE125A /* TestHomeViewController.swift */,
+				A01FB1E12675552D00554AA8 /* HomePageViewController.swift */,
 			);
 			path = KNWInventory;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			files = (
 				A0EF2BE226753E3200FE125A /* PasswordPageViewController.swift in Sources */,
 				A08ED2F326740E570003F16F /* ViewController.swift in Sources */,
+				A01FB1E22675552D00554AA8 /* HomePageViewController.swift in Sources */,
 				A08ED2EF26740E570003F16F /* AppDelegate.swift in Sources */,
 				A08ED2F126740E570003F16F /* SceneDelegate.swift in Sources */,
 				A0EF2BE926753E6A00FE125A /* TestHomeViewController.swift in Sources */,
