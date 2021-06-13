@@ -1,6 +1,7 @@
 import React, { useState, useContext, useRef, useEffect } from "react"
 import { validateItem } from "./utils";
 import { AppContext } from "./AppContext.js";
+import { reload } from './InventoryPage'
 import { Modal } from 'bootstrap';
 import axios from "axios";
 
@@ -59,6 +60,11 @@ export function CreateItemModal({ show, setShow, refresh }) {
         })
     }
 
+    const handleClose = () => {
+        setShow(false);
+        reload();
+    }
+
     const [modal, setModal] = useState(null);
     const modalRef = useRef();
 
@@ -80,7 +86,7 @@ export function CreateItemModal({ show, setShow, refresh }) {
             </div>
         )
     }
-
+    
     return (
         <div ref={modalRef} className="modal fade modal-fullscreen-md-down" data-backdrop="static" id="itemModal" tabIndex="-1" aria-labelledby="itemModalLabel" aria-hidden="true">
             <div className="modal-dialog">
@@ -127,7 +133,7 @@ export function CreateItemModal({ show, setShow, refresh }) {
                         </form>
                     </div>
                     <div className="modal-footer">
-                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => setShow(false)}>Close</button>
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal" onClick={() => handleClose()} >Close</button>
                         <button type="button" className="btn btn-primary" onClick={() => submit()}>Add</button>
                     </div>
                 </div>

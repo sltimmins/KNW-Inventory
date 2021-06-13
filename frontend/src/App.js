@@ -43,16 +43,11 @@ export function App() {
             <Route path="/inventory">
               <InventoryPage />
             </Route>
-            <Route path="/listing">
+            <Route path="/item">
               <ItemListingPage />
             </Route>
-            <PrivateRoute path="/">
-              <p>User dashboard!</p>
-            </PrivateRoute>
-
           </Switch>
         </Router>
-
       </div>
     </AppContext.Provider>
   );

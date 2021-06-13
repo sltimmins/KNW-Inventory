@@ -6,6 +6,10 @@ import { ItemListingPage} from './ItemListingPage';
 import { AppContext } from "./AppContext";
 import axios from "axios";
 
+export function reload(){
+    window.location.reload();
+}
+
 export function InventoryPage({ item }) {
     const { baseURL } = useContext(AppContext);
     
@@ -37,7 +41,7 @@ export function InventoryPage({ item }) {
                 <h1>ENGR 1357 Inventory</h1>
                 <button type="button" className="btn btn-primary" onClick={() => setShow(true)}>Add Item</button>
             </div>
-            < CreateItemModal show={show} setShow={setShow} refresh={getListings} />
+            < CreateItemModal show={show} setShow={setShow} refresh={getListings}/>
             < InventoryList key={items.id} listings={items} setListing={setListing} refresh={getListings} />
         </div>
     )
